@@ -1,0 +1,192 @@
+/* Note: I used the same grey colors from the other CSS stylesheet
+   for consistency and since they appeared to match the color better.
+   I'm not sure whether the goal was to use the color 'lightgrey' or to get
+   a version of a light gray. I did keep the red for the heart as 'red' however.
+*/
+
+
+
+body {
+  background-color:black;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+/* HEADER STYLING */
+
+header {
+  margin-left: 16px;
+  margin-top: 12px;
+  border-style: solid;
+  border-color: rgb(47,51,54);
+  display: grid;
+}
+
+.wd-left-header {
+  float: left;
+  margin-left: 16px;
+}
+
+header .wd-bookmark-title {
+  font-weight: bold;
+  font-size: 20px;
+  padding-top: 5px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+header .wd-bookmark-owner {
+  color: rgb(110,118,125);
+  font-size: 13px;
+  padding-bottom: 12px;
+}
+
+header .wd-right-header {
+  color: rgb(29,161,242);
+  float: right;
+  padding-right: 16px;
+  padding-top: 14px;
+}
+
+/* Main Content Stying */
+main {
+  margin-left: 16px;
+}
+
+/*Article Styling*/
+
+article {
+  border-style: solid;
+  border-color: rgb(47,51,54);
+  padding-top: 12px;
+  display: flex;
+}
+
+.wd-content {
+  border-left: 12px;
+}
+
+.wd-user-avatar {
+  width: 10%;
+  float: left;
+  padding-left: 16px;
+  padding-right: 12px;
+}
+
+section {
+  width: 90%;
+  float: right;
+}
+
+.wd-user-avatar img{
+  height: 48px;
+  width: 48px;
+  border-radius: 50px;
+}
+
+.wd-headings {
+  border-left: 16px;
+  font-size: 15px;
+  color: rgb(110,118,125);
+}
+
+.wd-username {
+  font-weight: bold;
+  color: white;
+}
+
+.wd-left-heading {
+  float: left;
+}
+
+.wd-article-right-heading {
+  float: right;
+  padding-right: 16px;
+}
+
+.wd-message {
+  clear:both;
+  font-size: 15px;
+  width: 506px;
+  padding-bottom: 12px;
+  padding-right: 16px;
+}
+
+.wd-shared-content {
+  display: grid;
+}
+
+.wd-shared-content img {
+  height: 264px;
+  width: 504px;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  border-style: solid;
+  border-width: 1px;
+  border-bottom-width: 0.5px;
+  border-color: rgb(47,51,54);
+}
+
+.wd-content-text {
+  width: 504px;
+  border-style: solid;
+  border-width: 1px;
+  border-top-width: 0.5px;
+  border-color: rgb(47,51,54);
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  font-size: 15px;
+  padding-top: 12px;
+}
+
+.wd-content-title {
+  font-weight: bold;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.wd-content-snippet {
+  color: rgb(110,118,125);
+  padding: 12px;
+}
+
+.wd-shared-link {
+  color: rgb(110,118,125);
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.wd-shared-link a {
+  color: rgb(110,118,125);
+  text-decoration: none;
+  padding-left: 0.5em;
+}
+
+.wd-tuit-interactions {
+  padding-top: 12px;
+  display:grid;
+  grid-template-columns: auto auto auto auto;
+  padding-bottom: 12px;
+}
+
+.wd-tuit-interactions a {
+  width: 25%;
+  color: rgb(110,118,125);
+  text-decoration: none;
+}
+
+.wd-interaction-like a {
+  color: red;
+}
+
+.wd-tuit-interactions i {
+  padding-right: 12px;
+}
+
+
+
+
+
+
+
+
