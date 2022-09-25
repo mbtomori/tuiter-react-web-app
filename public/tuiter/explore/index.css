@@ -148,10 +148,13 @@ section {
 
 .wd-publisher {
   font-weight: bold;
+  font-size: 13px;
 }
 
 .wd-title {
   font-weight: bold;
+  font-size: 13px;
+  margin: 0px;
   padding-top: 5px;
   padding-bottom: 5px;
   padding-right: 3px;
