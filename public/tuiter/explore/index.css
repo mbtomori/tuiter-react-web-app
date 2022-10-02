@@ -1,166 +1,18 @@
-/* General Body Styling*/
-
-body {
-  background-color:black;
-  color:white;
-  font-family: Arial, sans-serif;
-  font-size: 14px;
-}
-
-/* Searchbar styling */
-
-.wd-header-grid {
-  clear:both;
-}
-
-/* I got the background color using a color picker from the wireframe.
-   The color considered "dark grey" didn't look right. */
-.wd-searchbar {
-  width: 85%;
-  float: left;
-  background-color: rgb(33,35,39);
-  border-radius: 25px;
-  height: 2em;
-  margin-left: 16px;
-}
-
-.wd-searchbar .fa-magnifying-glass {
-  margin-left: 15px;
-  color:rgb(110,118,125)
-}
-
-/* Same note on the background color dark grey */
-
-.wd-searchbar > input[type=text] {
-  width: 80%;
-  background-color: rgb(33,35,39);
-  color: white;
-  margin-left: 5px;
-  margin-top: 5px;
-  border-style: none;
-  outline: none;
-}
-
-.wd-searchbar > input::placeholder {
-  color:rgb(110,118,125)
-}
-
-.wd-settings {
-  width: 10%;
-  float: right;
-  margin-top: .5em;
-  border-right: 16px;
-}
-
-header .fa-gear {
-  color: rgb(29,161,242);
-  float: right;
-  padding-right: 12px;
-}
-
-/* Navigation Styling */
-
-nav {
-  border-top: 4em;
-  padding-bottom: 1.25em;
-  border-style: solid;
-  border-color: black;
-  border-bottom-color: rgb(47, 51, 54);
-  border-left: 16px;
-}
-
-nav a {
-  color: rgb(110,118,125);
-  font-size: 15px;
-  padding: 16px;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-nav a:hover {
-  color: rgb(29,161,242);
-  border-bottom: solid;
-  border-bottom-width: 3px;
-  border-bottom-color: rgb(29,161,242);
-}
-
-/* Section Styling */
-
-section {
-  border-bottom-style: solid;
-  border-bottom-color: rgb(47, 51, 54);
-  margin-left: 16px;
-  margin-right: 12px;
-  height: 120px;
-}
-
-.wd-content-grid-row {
-  clear:both;
-}
-
-.wd-content-grid-left {
-  width: 80%;
-  float:left;
-  padding-top: 10px;
-}
-
-.wd-topic {
-  color:rgb(110,118,125);
-  font-size: 13px;
-}
-
-.wd-tuit-time {
-  color:rgb(110,118,125);
-  font-size: 13px;
-}
-
-.wd-separator-bullet {
-  font-weight: bold;
-  font-size: 16px;
-  color:rgb(110,118,125);
-}
-
-.wd-num-tuits {
-  color:rgb(110,118,125);
-  font-size: 13px;
-}
-
-.wd-content-grid-right {
-  width: 20%;
-  float: left;
+.wd-logo img {
+  width: 40px;
+  height: 40px;
 }
 
 .wd-tuit-img img {
-  height: 100px;
-  width: 100px;
-  float: right;
-  border-right: 16px;
-  border-radius: 15px;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  width: 60px;
+  height: 60px;
 }
 
-.wd-publishing-icon img{
-  height: 16px;
-  width: 16px;
-  border-radius: 15px;
+.fa-gear {
+  width: 40px;
+  height: 40px;
 }
 
-.wd-publisher {
-  font-weight: bold;
-  font-size: 13px;
-}
-
-.wd-title {
-  font-weight: bold;
-  font-size: 13px;
-  margin: 0px;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  padding-right: 3px;
-}
-
-.wd-title a {
-  text-decoration: none;
-  color: white;
+input {
+  text-indent: 20px;
 }
