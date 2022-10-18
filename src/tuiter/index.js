@@ -1,6 +1,8 @@
 import NavigationSidebar from "./navigation-sidebar";
 import WhoToFollowList from "./who-to-follow-list";
 import ExploreComponent from "./explore";
+import {Routes, Route} from "react-router";
+import HomeComponent from "./home";
 
 function Tuiter() {
     return (
@@ -8,12 +10,12 @@ function Tuiter() {
             <div className="col-2 col-md-2 col-lg-1 col-xl-2">
                 <NavigationSidebar active="explore"/>
             </div>
-            <div className="col-10 col-md-10 col-lg-7 col-xl-6"
+            <div className="col-10 col-md-10 col-lg-11 col-xl-10"
                  style={{"position": "relative"}}>
-                <ExploreComponent/>
-            </div>
-            <div className="d-sm-none d-md-none d-lg-block col-lg-4 col-xl-4">
-                <WhoToFollowList/>
+                <Routes>
+                     <Route path="home"    element={<HomeComponent/>}/>
+                     <Route path="explore" element={<ExploreComponent/>}/>
+                </Routes>
             </div>
         </div>
     )
