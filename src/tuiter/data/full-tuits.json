@@ -1,0 +1,44 @@
+[
+ {
+   "_id": 100,
+   "topic": "Space",
+   "userName": "SpaceX",
+   "time": "2h",
+   "title": "100s of SpaceX Starships land on Mars after a 6 month journey. 1000s of Martian colonists being building Mars Base 1",
+   "image": "/images/spacex.jpeg",
+   "liked": false,
+   "replies": 1,
+   "retuits": 2,
+   "likes": 5,
+   "handle": "@spacex",
+   "tuit": "You want to wake up in the morning and think the future is going to be great - and that’s what being a spacefaring civilization is all about. It’s about believing in the future and thinking that the future will be better than the past. And I can’t think of anything more exciting than going out there and being among the stars"
+ },
+   {
+   "_id": 101,
+   "topic": "Politics",
+   "userName": "The New York Times",
+   "time": "1h",
+   "title": "Right to Vote? The Answer May Surprise You.",
+   "image": "/images/nyt.png",
+   "liked": true,
+   "replies": 26,
+   "retuits": 23,
+   "likes": 78,
+   "handle": "@nytimes",
+   "tuit": "There is no explicit declaration in the U.S. Constitution that says Americans have a right to vote — something many politicians and their supporters consider fundamental to democracy. Here’s a look at why that is, and what rights voters actually have."
+ },
+   {
+   "_id": 102,
+   "topic": "Parenting",
+   "userName": "Alexandra Petri",
+   "time": "3h",
+   "title": "Opinion  The best and worst Halloween costumes for your baby",
+   "image": "/images/petridish.png",
+   "liked": true,
+   "replies": 5,
+   "retuits": 6,
+   "likes": 43,
+   "handle": "@petridishes",
+   "tuit": "I have concocted a few rules for baby costumes that I believe to be sound. For instance, do not dress your baby as a branded entity unless you are being compensated for doing so. In general, it is cuter to dress a baby as a vaguely noisome creature (spider, skunk, bat, opossum) than a creature that is cute already (puppy, kitten, rabbit). It is funny to dress the baby up as an entity rounder than itself (egg, pumpkin, etc.). If you are doing a parent-and-baby combo, think very, very carefully. And do not get me started on gendered outfits!"
+ }
+]

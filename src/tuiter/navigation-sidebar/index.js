@@ -3,6 +3,17 @@
 import React from "react";
 import {Link} from "react-router-dom";
 import {useLocation} from "react-router";
+import {
+    HouseDoorFill,
+    Hash,
+    Asterisk,
+    Bell,
+    Envelope,
+    Bookmark,
+    CardList,
+    Person,
+    ThreeDots
+} from 'react-bootstrap-icons';
 
 const NavigationSidebar = () => {
     const {pathname} = useLocation();
@@ -15,40 +26,40 @@ const NavigationSidebar = () => {
                 Tuiter
            </Link>
            <Link to="/tuiter/home"  className={`list-group-item
-                          ${active === 'home'?'active':''}`}>
-             Home
+                          ${(active === 'home' || paths.length < 3) ?'active':''}`}>
+               <HouseDoorFill className="pe-2" size={25}/>Home
            </Link>
            <Link to="/tuiter/explore"  className={`list-group-item
                           ${active === 'explore'?'active':''}`}>
-             Explore
+             <Hash className="pe-2" size={25} />Explore
+           </Link>
+           <Link to="/" className="list-group-item">
+               <Asterisk className="pe-2" size={25}/>Labs
            </Link>
            <a href="#" className={`list-group-item
                           ${active === 'notifications'?'active':''}`}>
-             Notifications
+             <Bell className="pe-2" size={25}/>Notifications
            </a>
            <a href="#" className={`list-group-item
                           ${active === 'messages'?'active':''}`}>
-             Messages
+             <Envelope className="pe-2" size={25}/>Messages
            </a>
            <a href="#" className={`list-group-item
                           ${active === 'bookmarks'?'active':''}`}>
-             Bookmarks
+             <Bookmark className="pe-2" size={25}/>Bookmarks
            </a>
            <a href="#" className={`list-group-item
                           ${active === 'lists'?'active':''}`}>
-             Lists
+             <CardList className="pe-2" size={25}/>Lists
            </a>
            <a href="#" className={`list-group-item
                           ${active === 'profile'?'active':''}`}>
-             Profile
+             <Person className="pe-2" size={25}/>Profile
            </a>
            <a href="#" className={`list-group-item
                           ${active === 'more'?'active':''}`}>
-             More
+             <ThreeDots className="pe-2" size={25}/>More
            </a>
-             <Link to="/" className="list-group-item">
-                  Labs
-             </Link>
        </div>
      );
 };

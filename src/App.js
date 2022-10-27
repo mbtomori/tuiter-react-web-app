@@ -10,7 +10,6 @@ function App() {
     return (
         <BrowserRouter>
             <div className="container">
-                <Nav/>
                 <Routes>
                   <Route path="/*" element={<Labs/>}/>
                   <Route path="/hello"
