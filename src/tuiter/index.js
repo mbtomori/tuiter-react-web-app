@@ -9,7 +9,6 @@ import { Provider } from "react-redux";
 const store = configureStore({
     reducer: {
         who: whoReducer,
-        tuits: tuitsReducer,
         tuitItems: tuitsReducer
     }
 });
