@@ -6,7 +6,7 @@ import TuitItem from "./tuit-item";
 import "./index.css"
 
 const TuitsList = () => {
-    const tuitsArray = useSelector((state) => state.tuitItems)
+    const tuitsArray = useSelector((state) => state.tuits)
 
     return (
         <ul className="list-group">
