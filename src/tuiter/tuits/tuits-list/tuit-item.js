@@ -1,14 +1,15 @@
-/* eslint-disable */
-
 import React from "react";
+import { useDispatch } from "react-redux";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faEllipsis as fasEllipsis} from '@fortawesome/free-solid-svg-icons'
 import { faHeart as fasHeart} from '@fortawesome/free-solid-svg-icons'
 import { faComment, faArrowUpFromBracket, faRetweet, faCertificate} from '@fortawesome/free-solid-svg-icons'
+import {deleteTuit} from "../../reducers/tuits-reducer";
 import TuitStats from "./tuit-stats";
 
 library.add(fasEllipsis, fasHeart, faComment, faArrowUpFromBracket, faRetweet, faCertificate)
+
 
 const TuitItem = (
     {
@@ -28,26 +29,36 @@ const TuitItem = (
         }
     }
 ) => {
+    const dispatch = useDispatch();
+    const deleteTuitHandler = (id) => {
+      dispatch(deleteTuit(id));
+    }
+
     return (
-        <article className="row">
-            <div className="col-1 wd-avatar img-fluid">
-                <img src={tuit.image} className="rounded-circle"></img>
-            </div>
-            <section className="col-11 wd-tuiter-content ps-4">
-                <div className="row wd-headings position-relative">
-                    <div className="wd-left-heading col-11">
-                        <span className="wd-username fw-bold small">{tuit.userName}</span>
-                        <span className="wd-verified px-1 text-primary"><FontAwesomeIcon icon="fa-solid fa-certificate"/></span>
-                        <span className="wd-user-handle small text-secondary">{tuit.handle} &middot;</span>
-                        <span className="wd-time small text-secondary px-1">{tuit.time}</span>
-                    </div>
+        <li className="list-group-item">
+            <article className="row">
+                <div className="col-1 wd-avatar img-fluid">
+                    <img src={tuit.image} className="rounded-circle"></img>
                 </div>
-                <p className="wd-tuit small">{tuit.tuit}</p>
-                <TuitStats
-                    key={tuit._id}
-                    tuit={tuit}/>
-            </section>
-        </article>
+                <section className="col-11 wd-tuiter-content ps-4">
+                    <div className="row wd-headings position-relative">
+                        <div className="wd-left-heading col-11">
+                            <span className="wd-username fw-bold small">{tuit.userName}</span>
+                            <span className="wd-verified px-1 text-primary"><FontAwesomeIcon icon="fa-solid fa-certificate"/></span>
+                            <span className="wd-user-handle small text-secondary">{tuit.handle} &middot;</span>
+                            <span className="wd-time small text-secondary px-1">{tuit.time}</span>
+                            <span><i className="bi bi-x-lg float-end"
+                                     onClick={() => deleteTuitHandler(tuit._id)}></i>
+                            </span>
+                        </div>
+                    </div>
+                    <p className="wd-tuit small">{tuit.tuit}</p>
+                    <TuitStats
+                        key={tuit._id}
+                        tuit={tuit}/>
+                </section>
+            </article>
+        </li>
     );
 };
 export default TuitItem;
