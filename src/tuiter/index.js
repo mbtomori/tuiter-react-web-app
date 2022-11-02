@@ -1,5 +1,6 @@
 import NavigationSidebar from "./navigation-sidebar";
 import ExploreComponent from "./explore";
+import ProfileComponent from "./profile";
 import {Routes, Route} from "react-router";
 import HomeComponent from "./home";
 import whoReducer from "./reducers/who-reducer";
@@ -27,6 +28,7 @@ function Tuiter() {
                          <Route index element={<HomeComponent/>}/>
                          <Route path="home"    element={<HomeComponent/>}/>
                          <Route path="explore" element={<ExploreComponent/>}/>
+                         <Route path="profile" element={<ProfileComponent/>}/>
                     </Routes>
                 </div>
             </div>

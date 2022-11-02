@@ -36,6 +36,10 @@ const NavigationSidebar = () => {
            <Link to="/" className="list-group-item">
                <Asterisk className="pe-2" size={25}/>Labs
            </Link>
+           <Link to="/tuiter/profile" className={`list-group-item
+                          ${active === 'profile'?'active':''}`}>
+             <Person className="pe-2" size={25} />Profile
+           </Link>
            <a href="#" className={`list-group-item
                           ${active === 'notifications'?'active':''}`}>
              <Bell className="pe-2" size={25}/>Notifications
@@ -51,10 +55,6 @@ const NavigationSidebar = () => {
            <a href="#" className={`list-group-item
                           ${active === 'lists'?'active':''}`}>
              <CardList className="pe-2" size={25}/>Lists
-           </a>
-           <a href="#" className={`list-group-item
-                          ${active === 'profile'?'active':''}`}>
-             <Person className="pe-2" size={25}/>Profile
            </a>
            <a href="#" className={`list-group-item
                           ${active === 'more'?'active':''}`}>
