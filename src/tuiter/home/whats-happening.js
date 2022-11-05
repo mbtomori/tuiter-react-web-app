@@ -1,7 +1,6 @@
 import React, {useState} from "react";
 import {useDispatch} from "react-redux";
 import {createTuit} from "../reducers/tuits-reducer";
-import TuitItem from "../tuits/tuits-list/tuit-item";
 
 const WhatsHappening = () => {
     let [whatsHappening, setWhatsHappening] = useState('');

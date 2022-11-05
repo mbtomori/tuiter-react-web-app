@@ -1,26 +1,12 @@
 import React from "react";
 import WhoToFollowList from "../who-to-follow-list";
 import {Link} from "react-router-dom";
+import {useSelector} from "react-redux";
 
-const ProfileComponent = (
-    {
-        profile = {
-            "firstName": 'Alice',
-            "lastName": 'Liddell',
-            "handle": '@realaliceinwonderland',
-            "profilePicture": '../images/Alice.jpg',
-            "bannerPicture": '../images/alice-banner.jpg',
-            "bio": 'Adventurer in wonderland. Regularly flummoxed by the white rabbit and cheshire cat. Overly curious. Not a fan of mad royalty or my history reading.',
-            "website": 'https"://movies.disney.com/alice-in-wonderland-1951',
-            "location": 'Bletchingdon, UK',
-            "dateOfBirth": '7/28/1951',
-            "dateJoined": '4/2012',
-            "numberOfTweets": '543',
-            "followingCount": '312',
-            "followersCount": '3.4k'
-        }
-    }
-) => {
+const ProfileComponent = () => {
+    const profile = useSelector(state => state.profile);
+    console.log("RERENDERING")
+    console.log(profile);
     return(
         <div className="row mt-2">
             <div className="col-10 col-lg-8 col-xl-8 border rounded px-0 py-3">
@@ -66,6 +52,6 @@ const ProfileComponent = (
                 <WhoToFollowList/>
            </div>
       </div>
-   );
-};
+        );
+    };
 export default ProfileComponent;

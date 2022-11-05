@@ -1,40 +1,97 @@
-import React from "react";
+import React, {useState} from "react";
 import WhoToFollowList from "../who-to-follow-list";
 import Form from 'react-bootstrap/Form';
-import {Link} from "react-router-dom";
-import {FloatingLabel, FormGroup} from "react-bootstrap";
+import {FloatingLabel, FormGroup, FormControl} from "react-bootstrap";
+import {useDispatch, useSelector} from "react-redux";
+import {updateProfile} from "../reducers/profile-reducer";
+import { useNavigate } from "react-router-dom";
 
-const EditProfileComponent = (
-    {
-        profile = {
-            "firstName": 'Alice',
-            "lastName": 'Liddell',
-            "handle": '@realaliceinwonderland',
-            "profilePicture": '../images/Alice.jpg',
-            "bannerPicture": '../images/alice-banner.jpg',
-            "bio": 'Adventurer in wonderland. Regularly flummoxed by the white rabbit and cheshire cat. Overly curious. Not a fan of mad royalty or my history reading.',
-            "website": 'movies.disney.com/alice-in-wonderland-1951',
-            "location": 'Bletchingdon, UK',
-            "dateOfBirth": '7/28/1951',
-            "dateJoined": '4/2012',
-            "numberOfTweets": '543',
-            "followingCount": '312',
-            "followersCount": '3.4k'
+
+const EditProfileComponent = () => {
+    const defaultProfile = useSelector(state => state.profile)
+    const [profile, setProfile] = useState(defaultProfile)
+    const [firstName, setFirstName] = useState(profile.firstName);
+    const [lastName, setLastName] = useState(profile.lastName);
+    const [bio, setBio] = useState(profile.bio);
+    const [location, setLocation] = useState(profile.location);
+    const [website, setWebsite] = useState(profile.website);
+    const [dateOfBirth, setDateOfBirth] = useState(profile.dateOfBirth);
+
+    function handleNameChange(e) {
+        const newName = e.target.value.split(" ")
+        setFirstName(newName[0]);
+        setLastName(newName[1]);
+        const newProfile = {
+            ...profile,
+            firstName: firstName,
+            lastName: lastName
         }
+        setProfile(newProfile)
     }
-) => {
+
+    function handleBioChange(e) {
+        const newBio = e.target.value;
+        setBio(newBio);
+        const newProfile = {
+            ...profile,
+            bio: newBio
+        }
+        setProfile(newProfile)
+    }
+
+    function handleLocationChange(e) {
+        const newLocation = e.target.value;
+        setLocation(newLocation);
+        const newProfile = {
+            ...profile,
+            location: newLocation
+        }
+        setProfile(newProfile)
+    }
+
+    function handleWebsiteChange(e) {
+        const newWebsite = e.target.value;
+        setWebsite(newWebsite);
+        const newProfile = {
+            ...profile,
+            website: newWebsite
+        }
+        setProfile(newProfile)
+    }
+
+    const dispatch = useDispatch();
+    const updateProfileHandler = (event) => {
+        dispatch(updateProfile({...profile,
+            firstName: firstName,
+            lastName:lastName,
+            bio: bio,
+            location: location,
+            website: website}));
+    }
+
+    let navigate = useNavigate();
+    const routeChange = () => {
+        let path = `../Profile`;
+        navigate(path);
+    }
     return(
+        <>
         <div className="row mt-2">
             <div className="col-10 col-lg-8 col-xl-8 border rounded px-0 py-2">
                 <div className="row px-3">
-                    <div className="col-1 py-2">
-                        <i className="bi bi-x-lg"></i>
-                    </div>
+                    <button className="btn col-1 py-2"
+                        onClick={() => routeChange()}><i className="bi bi-x-lg"></i>
+                    </button>
                     <div className="col-9 py-2">
                         <div className="fw-bold"> Edit Profile</div>
                     </div>
                     <div className="col-2">
-                        <button className="rounded-pill btn btn-dark float-end mb-2 ps-3 pe-3 me-1 fw-bold text-white">Save</button>
+                        <button className="rounded-pill btn btn-dark float-end mb-2 ps-3 pe-3 me-1 fw-bold text-white"
+                        onClick={(event) => {
+                            updateProfileHandler(event);
+                            routeChange()
+                        }}
+                        >Save</button>
                     </div>
                 </div>
                 <div>
@@ -49,7 +106,7 @@ const EditProfileComponent = (
                         </div>
                         <div className="row img-wrapper card-img-overlay top-50 h-100 ms-3">
                             <div className="col-2 card-img-overlay mt-5 img-fluid">
-                                <img src={profile.profilePicture} className="h-50 rounded-circle mx-3"></img>
+                                <img src={profile.profilePicture} className="h-75 rounded-circle mx-3"></img>
                                 <div className="card-img-overlay rounded-circle start-50 pt-1">
                                     <button className="btn rounded-circle bg-secondary border-0 bg-opacity-75 mt-4">
                                         <i className="bi bi-camera text-white"></i>
@@ -61,30 +118,46 @@ const EditProfileComponent = (
                 </div>
                 <div className="row mt-5 px-3">
                     <Form>
-                        <Form.Group className="mt-3 mb-3" controlId="formGroupName">
+                        <FormGroup className="mt-3 mb-3" controlId="formGroupName">
                             <FloatingLabel id="formName" label="Name">
-                                <Form.Control as="input" id="formControlName" value={profile.firstName + " " + profile.lastName}/>
+                                <FormControl type="input"
+                                            value={firstName + " " + lastName}
+                                             onChange={(event) => {
+                                                 handleNameChange(event)}
+                                             }
+                                />
                             </FloatingLabel>
-                        </Form.Group>
-                        <Form.Group className="mb-3" controlId="formGroupBio">
+                        </FormGroup>
+                        <FormGroup className="mb-3" controlId="formGroupBio">
                            <FloatingLabel id="formBio" label="bio">
-                               <Form.Control as="textarea" style={{height: '100px'}} value={profile.bio} />
+                               <FormControl as="textarea"
+                                            style={{height: '100px'}}
+                                            value={bio}
+                                            onChange={(event) =>
+                                                 handleBioChange(event)}
+                               />
                            </FloatingLabel>
-                        </Form.Group>
-                        <Form.Group className="mb-3" controlId="formGroupLocation">
+                        </FormGroup>
+                        <FormGroup className="mb-3" controlId="formGroupLocation">
                             <FloatingLabel id="formLocation" label="Location" className="pb-3">
-                                <Form.Control as="input" value={profile.location}/>
+                                <FormControl as="input"
+                                             value={location}
+                                             onChange={(event) =>
+                                                 handleLocationChange(event)}/>
                             </FloatingLabel>
-                        </Form.Group>
-                        <Form.Group className="mb-3" controlId="formGroupWebsite">
+                        </FormGroup>
+                        <FormGroup className="mb-3" controlId="formGroupWebsite">
                             <FloatingLabel id="formName" label="Website" className="mb-3">
-                                <Form.Control as="input" value={profile.website}/>
+                                <FormControl as="input"
+                                             value={website}
+                                             onChange={(event) =>
+                                                 handleWebsiteChange(event)}/>
                             </FloatingLabel>
-                        </Form.Group>
+                        </FormGroup>
                     </Form>
                     <div>
                         <div className="small">Birth Date &#183; <a href="#" className="link-primary text-decoration-none">Edit</a></div>
-                        <div>{profile.dateOfBirth}</div>
+                        <div>{dateOfBirth}</div>
                     </div>
                 </div>
             </div>
@@ -92,6 +165,7 @@ const EditProfileComponent = (
                 <WhoToFollowList/>
            </div>
       </div>
+    </>
    );
 };
 export default EditProfileComponent;

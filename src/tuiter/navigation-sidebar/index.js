@@ -37,7 +37,7 @@ const NavigationSidebar = () => {
                <Asterisk className="pe-2" size={25}/>Labs
            </Link>
            <Link to="/tuiter/profile" className={`list-group-item
-                          ${active === 'profile'?'active':''}`}>
+                          ${active === 'profile'?'active':''} ${active === 'edit-profile'?'active':''}`}>
              <Person className="pe-2" size={25} />Profile
            </Link>
            <a href="#" className={`list-group-item
