@@ -1,3 +1,5 @@
+/*eslint-disable */
+
 import React from "react";
 import WhoToFollowList from "../who-to-follow-list";
 import {Link} from "react-router-dom";
@@ -21,8 +23,8 @@ const ProfileComponent = () => {
                 </div>
                 <div>
                     <div className="position-relative">
-                        <img src={profile.bannerPicture} className="w-100 px-0 mx-0 border-0"></img>
-                        <img src={profile.profilePicture} className="h-50 rounded-circle card-img-overlay mx-3 my-5 top-50"></img>
+                        <img src={profile.bannerPicture} alt="banner" className="w-100 px-0 mx-0 border-0"></img>
+                        <img src={profile.profilePicture} alt="avatar image" className="h-50 rounded-circle card-img-overlay mx-3 my-5 top-50"></img>
                     </div>
                     <Link to="../edit-profile">
                         <button className="rounded-pill btn btn-outline-secondary float-end w-25 mt-2 ps-3 pe-3 me-2 fw-bold text-black">Edit profile</button>
