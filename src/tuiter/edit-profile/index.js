@@ -1,3 +1,5 @@
+/*eslint-disable */
+
 import React, {useState} from "react";
 import WhoToFollowList from "../who-to-follow-list";
 import Form from 'react-bootstrap/Form';
@@ -15,7 +17,7 @@ const EditProfileComponent = () => {
     const [bio, setBio] = useState(profile.bio);
     const [location, setLocation] = useState(profile.location);
     const [website, setWebsite] = useState(profile.website);
-    const [dateOfBirth, setDateOfBirth] = useState(profile.dateOfBirth);
+    const [dateOfBirth] = useState(profile.dateOfBirth);
 
     function handleNameChange(e) {
         const newName = e.target.value.split(" ")
