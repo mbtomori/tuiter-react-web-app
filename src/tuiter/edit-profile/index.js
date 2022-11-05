@@ -73,7 +73,7 @@ const EditProfileComponent = () => {
 
     let navigate = useNavigate();
     const routeChange = () => {
-        let path = `../Profile`;
+        let path = `../profile`;
         navigate(path);
     }
     return(
