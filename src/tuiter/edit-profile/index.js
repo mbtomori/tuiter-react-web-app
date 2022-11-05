@@ -63,7 +63,8 @@ const EditProfileComponent = () => {
 
     const dispatch = useDispatch();
     const updateProfileHandler = (event) => {
-        dispatch(updateProfile({...profile,
+        dispatch(updateProfile({
+            ...profile,
             firstName: firstName,
             lastName:lastName,
             bio: bio,
