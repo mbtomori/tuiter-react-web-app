@@ -107,11 +107,11 @@ const EditProfileComponent = () => {
                             </div>
 
                         </div>
-                        <div className="row img-wrapper card-img-overlay top-50 h-100 ms-3">
+                        <div className="row img-wrapper card-img-overlay top-50 h-100 ms-3 mb-4 position-absolute">
                             <div className="col-2 card-img-overlay mt-5 img-fluid">
-                                <img src={profile.profilePicture} className="h-75 rounded-circle mx-3"></img>
+                                <img src={profile.profilePicture} className="h-50 rounded-circle mx-3"></img>
                                 <div className="card-img-overlay rounded-circle start-50 pt-1">
-                                    <button className="btn rounded-circle bg-secondary border-0 bg-opacity-75 mt-4">
+                                    <button className="btn rounded-circle bg-secondary border-0 bg-opacity-75 my-4">
                                         <i className="bi bi-camera text-white"></i>
                                     </button>
                                 </div>
@@ -119,7 +119,7 @@ const EditProfileComponent = () => {
                         </div>
                     </div>
                 </div>
-                <div className="row mt-5 px-3">
+                <div className="row d-inline px-3">
                     <Form>
                         <FormGroup className="mt-3 mb-3" controlId="formGroupName">
                             <FloatingLabel id="formName" label="Name">
