@@ -5,7 +5,8 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { faEllipsis as fasEllipsis} from '@fortawesome/free-solid-svg-icons'
 import { faHeart as fasHeart} from '@fortawesome/free-solid-svg-icons'
 import { faComment, faArrowUpFromBracket, faRetweet, faCertificate} from '@fortawesome/free-solid-svg-icons'
-import {deleteTuit} from "../../reducers/tuits-reducer";
+// import {deleteTuit} from "../../reducers/tuits-reducer";
+import {deleteTuitThunk} from "../../services/tuits-thunks";
 import TuitStats from "./tuit-stats";
 
 library.add(fasEllipsis, fasHeart, faComment, faArrowUpFromBracket, faRetweet, faCertificate)
@@ -31,7 +32,7 @@ const TuitItem = (
 ) => {
     const dispatch = useDispatch();
     const deleteTuitHandler = (id) => {
-      dispatch(deleteTuit(id));
+      dispatch(deleteTuitThunk(id));
     }
 
     return (
