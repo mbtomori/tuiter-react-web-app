@@ -33,11 +33,6 @@ const TuitStats = (
     }
 ) => {
     const dispatch = useDispatch();
-    // let dislikes = (tuit.dislikes === undefined) ? 0 : tuit.dislikes;
-    // const newTuit = {
-    //     ...tuit,
-    //     newTuit:dislikes
-    // }
 
     return (
         <div className="row wd-tuit-interactions pt-2 pb-2">
