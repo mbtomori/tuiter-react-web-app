@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import { useDispatch } from "react-redux";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core'
@@ -34,12 +34,13 @@ const TuitItem = (
     const deleteTuitHandler = (id) => {
       dispatch(deleteTuitThunk(id));
     }
+    const [image, setImage] = useState("/images/Alice.jpg")
 
     return (
         <li className="list-group-item">
             <article className="row">
                 <div className="col-1 wd-avatar img-fluid">
-                    <img src={tuit.image} alt="tuit" className="rounded-circle"></img>
+                    <img src={image} alt="tuit" className="rounded-circle"></img>
                 </div>
                 <section className="col-11 wd-tuiter-content ps-4">
                     <div className="row wd-headings position-relative">
