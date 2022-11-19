@@ -1,11 +1,10 @@
-import React, {useState} from "react";
+import React from "react";
 import { useDispatch } from "react-redux";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faEllipsis as fasEllipsis} from '@fortawesome/free-solid-svg-icons'
 import { faHeart as fasHeart} from '@fortawesome/free-solid-svg-icons'
 import { faComment, faArrowUpFromBracket, faRetweet, faCertificate} from '@fortawesome/free-solid-svg-icons'
-// import {deleteTuit} from "../../reducers/tuits-reducer";
 import {deleteTuitThunk} from "../../services/tuits-thunks";
 import TuitStats from "./tuit-stats";
 
@@ -34,13 +33,11 @@ const TuitItem = (
     const deleteTuitHandler = (id) => {
       dispatch(deleteTuitThunk(id));
     }
-    const [image, setImage] = useState("/images/Alice.jpg")
-
     return (
         <li className="list-group-item">
             <article className="row">
                 <div className="col-1 wd-avatar img-fluid">
-                    <img src={image} alt="tuit" className="rounded-circle"></img>
+                    <img src="/images/Alice.jpg" alt="tuit" className="rounded-circle"></img>
                 </div>
                 <section className="col-11 wd-tuiter-content ps-4">
                     <div className="row wd-headings position-relative">
